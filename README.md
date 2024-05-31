@@ -4,8 +4,7 @@ O Pipe Manager é uma aplicação para acompanhar o fluxo de trabalho de instala
 
 ## Tecnologias Utilizadas
 
-- [Vite](https://vitejs.dev/)
-- [React](https://reactjs.org/)
+- [Vite + React](https://vitejs.dev/)
 - [Ant Design](https://ant.design/)
 - [Supabase](https://supabase.com/)
 - [NodeJS](https://nodejs.org/en)
