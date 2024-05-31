@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Urbanist", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+}
+
+.hi2 {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: flex-end;
+  gap: 30px;
+}
+.btnTitle {
+  display: none;
+}
+.btnHMobile {
+  display: flex;
+  gap: 10px;
+  margin-left: 5px;
+}
+.main {
+  display: flex;
+  width: 100%;
+  height: 85vh;
+  background: rgb(239, 239, 245);
+  border-radius: 10px;
+}
+.mobile {
+  display: none;
+}
+.mNew {
+  display: flex;
+  align-items: normal;
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  border-right: 1px solid #cccc;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.mService {
+  display: flex;
+  align-items: normal;
+  gap: 10px;
+
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  border-right: 1px solid #cccc;
+  overflow-y: auto;
+}
+
+.mWaiting {
+  display: flex;
+  align-items: normal;
+  gap: 10px;
+
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  border-right: 1px solid #cccc;
+  overflow-y: auto;
+}
+.mCallEnd {
+  gap: 10px;
+  display: flex;
+  align-items: normal;
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  border-right: 1px solid #cccc;
+  overflow-y: auto;
+}
+
+.mService::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 970px) {
+  .container {
+    align-items: center;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    width: 50%;
+    height: 100%;
+    gap: 5px;
+  }
+  .btnTitle {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+  }
+  .hi2 {
+    width: 50%;
+    font-size: 0.9em;
+  }
+  .btnHMobile {
+    display: none;
+  }
+  .titleMobile {
+    display: none;
+  }
+
+  .main {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    /* background: rgb(239, 239, 245); */
+    border-radius: 10px;
+  }
+  .cardsMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+  }
+}

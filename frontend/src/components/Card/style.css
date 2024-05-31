@@ -1,0 +1,36 @@
+.cardChamado {
+  background: #fff;
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  border-left: 1px solid #c1c1c1;
+  border-radius: 10px;
+}
+#titleCard {
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  font-size: 1em;
+}
+.footerCard {
+  display: flex;
+  margin: 10px 0;
+  gap: 10px;
+  align-items: center;
+}
+.cEnd {
+  color: #c1c1c1;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+@media screen and (max-width: 1585px) {
+  .tag {
+    font-size: 0;
+    width: 20px;
+  }
+}

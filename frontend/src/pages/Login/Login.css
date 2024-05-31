@@ -1,0 +1,52 @@
+.containerLogin {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  background: #4096ff;
+  color: #f1f1f1;
+}
+.formLoginI {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+  border-radius: 10px;
+  gap: 20px;
+  background: rgb(239, 239, 245);
+  border-bottom: 5px solid #cccccc;
+  color: #212121;
+}
+
+.inpt {
+  width: 70%;
+}
+@media screen and (max-width: 970px) {
+  .containerLogin {
+    flex-direction: column;
+    width: 100%;
+  }
+  .infos {
+    width: 100%;
+    font-size: 0;
+  }
+  .formLoginI {
+    bottom: 0;
+    top: 30%;
+    left: 5%;
+    position: absolute;
+    width: 90%;
+    height: 400px;
+  }
+}
