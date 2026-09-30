@@ -1,21 +1,24 @@
-const userData = require("../data/userData");
+import * as userData from "../data/userData.js";
 
-exports.getAUser = function (userBody) {
+export const getAUser = function (userBody) {
   return userData.getAUser(userBody);
 };
 
-// exports.findCnpj = function (carteiraBody) {
-//   return paymentData.findCnpj(carteiraBody);
-// };
-
-exports.saveUser = function (userBody) {
+export const saveUser = function (userBody) {
   return userData.saveUser(userBody);
 };
 
-exports.alterUser = function (userBody) {
+export const alterUser = function (userBody) {
   return userData.alterUser(userBody);
 };
 
-exports.deleteAUser = function (userBody) {
+export const deleteAUser = function (userBody) {
   return userData.deleteAUser(userBody);
+};
+
+export default {
+  getAUser,
+  saveUser,
+  alterUser,
+  deleteAUser,
 };

@@ -1,11 +1,16 @@
-const express = require("express");
+import { Router } from "express";
+import {
+  getAllGroup,
+  register,
+  put,
+  deleteGroup,
+} from "../controllers/groupController.js";
 
-const router = express.Router();
-const controller = require("../controllers/groupController");
+const router = Router();
 
-router.post("/", controller.getAllGroup);
-router.post("/register/:user_id", controller.register);
-router.put("/register/", controller.put);
-router.delete("/register/", controller.delete);
+router.post("/", getAllGroup);
+router.post("/register/:user_id", register);
+router.put("/register/", put);
+router.delete("/register/", deleteGroup);
 
-module.exports = router;
+export default router;

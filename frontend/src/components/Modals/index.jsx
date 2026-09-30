@@ -415,7 +415,6 @@ export function AddModalCustomers({
     cnpj: "",
     phone: "",
     address: "",
-    cnpj: "",
   });
   const [isSwitch, setIsSwitch] = useState(true);
   const handleCancel = () => {

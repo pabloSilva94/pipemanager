@@ -1,21 +1,24 @@
-const groupData = require("../data/groupData");
+import * as groupData from "../data/groupData.js";
 
-exports.getAGroup = function (groupBody) {
+export const getAGroup = function (groupBody) {
   return groupData.getAGroup(groupBody);
 };
 
-// exports.findCnpj = function (carteiraBody) {
-//   return paymentData.findCnpj(carteiraBody);
-// };
-
-exports.saveGroup = function (groupBody) {
+export const saveGroup = function (groupBody) {
   return groupData.saveGroup(groupBody);
 };
 
-exports.alterUser = function (userBody) {
+export const alterUser = function (userBody) {
   return groupData.alterUser(userBody);
 };
 
-exports.deleteAGroup = function (userBody) {
+export const deleteAGroup = function (userBody) {
   return groupData.deleteAGroup(userBody);
+};
+
+export default {
+  getAGroup,
+  saveGroup,
+  alterUser,
+  deleteAGroup,
 };

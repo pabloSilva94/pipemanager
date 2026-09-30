@@ -1,6 +1,6 @@
-const providerService = require("../services/providerService");
+import providerService from "../services/providerService.js";
 
-exports.register = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { user_id } = req.params;
     const { name, email, password, group_id } = req.body;
@@ -14,16 +14,16 @@ exports.register = async (req, res) => {
       active: true,
     };
     const result = await providerService.saveUser(userBody);
-    res.status(200).send({ success: result.success, message: result.message });
+    return res.status(200).send({ success: result.success, message: result.message });
   } catch (e) {
-    res.status(500).send({ success: false, message: e.message });
+    return res.status(500).send({ success: false, message: e.message });
   }
 };
 
-exports.put = async (req, res) => {
+export const put = async (req, res) => {
   try {
     const { id, user_id } = req.params;
-    const { name, email, password } = req.body;
+    const { name, email, password, active } = req.body;
     const userBody = {
       id,
       name,
@@ -33,18 +33,18 @@ exports.put = async (req, res) => {
       user_id,
     };
     const result = await providerService.alterUser(userBody);
-    res.status(200).send({ success: true, message: result.message });
+    return res.status(200).send({ success: true, message: result.message });
   } catch (e) {
-    res.status(500).send({ success: false, message: e.message });
+    return res.status(500).send({ success: false, message: e.message });
   }
 };
 
-exports.delete = async (req, res) => {
+export const deleteProvider = async (req, res) => {
   try {
     const { id, user_id } = req.params;
     const result = await providerService.deleteAUser({ id, user_id });
-    res.status(200).send({ success: true, message: result.message });
+    return res.status(200).send({ success: true, message: result.message });
   } catch (e) {
-    res.status(500).send({ success: false, message: e.message });
+    return res.status(500).send({ success: false, message: e.message });
   }
 };

@@ -1,12 +1,16 @@
-const express = require("express");
+import { Router } from "express";
+import {
+  getAllCustomers,
+  register,
+  put,
+  deleteCustomer,
+} from "../controllers/customersController.js";
 
-const router = express.Router();
-const controller = require("../controllers/customersController");
+const router = Router();
 
-router.get("/:user_id", controller.getAllCustomers);
+router.get("/:user_id", getAllCustomers);
+router.post("/register/:user_id", register);
+router.put("/register/:id", put);
+router.delete("/register/:user_id/:id", deleteCustomer);
 
-router.post("/register/:user_id", controller.register);
-router.put("/register/:id", controller.put);
-router.delete("/register/:user_id/:id", controller.delete);
-
-module.exports = router;
+export default router;

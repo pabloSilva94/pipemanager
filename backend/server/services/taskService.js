@@ -1,30 +1,27 @@
-const {
-  getATask,
-  saveTask,
-  alterTask,
+import {
+  getATask as getTaskData,
+  saveTask as saveTaskData,
+  alterTask as alterTaskData,
   alterAStatusTask,
-  deleteATask,
-} = require("../data/taskData");
+  deleteATask as deleteTaskData,
+} from "../data/taskData.js";
 
-exports.getATask = function (taskBody) {
-  return getATask(taskBody);
+export const getATask = function (taskBody) {
+  return getTaskData(taskBody);
 };
 
-// exports.findCnpj = function (carteiraBody) {
-//   return paymentData.findCnpj(carteiraBody);
-// };
-
-exports.saveTask = function (taskBody) {
-  return saveTask(taskBody);
+export const saveTask = function (taskBody) {
+  return saveTaskData(taskBody);
 };
 
-exports.alterTask = function (taskBody) {
-  return alterTask(taskBody);
+export const alterTask = function (taskBody) {
+  return alterTaskData(taskBody);
 };
-exports.alterStatusTask = function (taskBody) {
+
+export const alterStatusTask = function (taskBody) {
   return alterAStatusTask(taskBody);
 };
 
-exports.deleteATask = function (taskBody) {
-  return deleteATask(taskBody);
+export const deleteATask = function (taskBody) {
+  return deleteTaskData(taskBody);
 };

@@ -1,23 +1,20 @@
-const userService = require("../services/userService");
+import userService from "../services/userService.js";
 
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
-  if (email === "" || password === "") {
-    res.status(404).send({ success: false, message: "Dados invalidos back" });
+  if (!email || !password) {
+    return res.status(404).send({ success: false, message: "Dados invalidos back" });
   }
-  const userBody = {
-    email,
-    password,
-  };
+  const userBody = { email, password };
   try {
     const users = await userService.getAUser(userBody);
-    res.status(200).send({ success: true, data: users.data });
+    return res.status(200).send({ success: true, data: users.data });
   } catch (e) {
-    res.status(500).send({ success: false, message: e.message });
+    return res.status(500).send({ success: false, message: e.message });
   }
 };
 
-exports.register = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const userBody = {
@@ -28,36 +25,30 @@ exports.register = async (req, res) => {
       adm: true,
     };
     const result = await userService.saveUser(userBody);
-    res.status(200).send({ success: result.success, message: result.message });
+    return res.status(200).send({ success: result.success, message: result.message });
   } catch (e) {
-    res.status(500).send({ success: false, message: e.message });
+    return res.status(500).send({ success: false, message: e.message });
   }
 };
 
-exports.put = async (req, res) => {
+export const put = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, email, password, adm } = req.body;
-    const userBody = {
-      id,
-      name,
-      email,
-      password,
-      adm,
-    };
-    const result = await userService.alterUser(userBody);
-    res.status(200).send({ success: true, message: "alterado com sucesso" });
+    const userBody = { id, name, email, password, adm };
+    await userService.alterUser(userBody);
+    return res.status(200).send({ success: true, message: "alterado com sucesso" });
   } catch (e) {
-    res.status(500).send({ success: false, message: e.message });
+    return res.status(500).send({ success: false, message: e.message });
   }
 };
 
-exports.delete = async (req, res) => {
+export const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const result = await userService.deleteAUser({ id });
-    res.status(200).send({ success: true, message: "Usuário deletado" });
+    await userService.deleteAUser({ id });
+    return res.status(200).send({ success: true, message: "Usuário deletado" });
   } catch (e) {
-    res.status(500).send({ success: false, message: e.message });
+    return res.status(500).send({ success: false, message: e.message });
   }
 };

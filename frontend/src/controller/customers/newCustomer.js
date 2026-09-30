@@ -6,7 +6,7 @@ export const createACustomers = async (customersBody) => {
     return { success: false, message: "Dados inválidos." };
   }
   try {
-    const response = await fetch(`${api}customers/register/${user_id}`, {
+    const response = await fetch(`${api}group/customers/register/${user_id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

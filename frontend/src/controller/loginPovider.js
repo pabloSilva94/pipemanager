@@ -22,6 +22,7 @@ export const loginProvider = async (userBody) => {
 
     const data = await response.json();
     const newData = data.data[0];
+    console.log(data)
     localStorage.setItem("user", JSON.stringify(newData));
     return { success: data.success, message: data.message };
   } catch (error) {

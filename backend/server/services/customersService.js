@@ -1,17 +1,22 @@
-const { getACustomers, saveCustomer, alterCustomer, deleteCustomer } = require("../data/customersData");
+import {
+  getACustomers as getCustomersData,
+  saveCustomer,
+  alterCustomer,
+  deleteCustomer,
+} from "../data/customersData.js";
 
-exports.getACustomers = function (customerBody) {
-  return getACustomers(customerBody);
+export const getACustomers = function (customerBody) {
+  return getCustomersData(customerBody);
 };
 
-exports.saveACustomer = function (customerBody) {
+export const saveACustomer = function (customerBody) {
   return saveCustomer(customerBody);
 };
 
-exports.alterACustomer = function (customerBody) {
+export const alterACustomer = function (customerBody) {
   return alterCustomer(customerBody);
 };
 
-exports.deleteACustomer = function (customerBody) {
+export const deleteACustomer = function (customerBody) {
   return deleteCustomer(customerBody);
 };

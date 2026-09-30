@@ -1,7 +1,9 @@
-require("dotenv").config();
-const http = require("http");
-const app = require("../server/app");
-const { Server } = require("socket.io");
+import dotenv from "dotenv";
+import http from "http";
+import { Server } from "socket.io";
+import app from "../server/app.js";
+
+dotenv.config();
 
 const PORT = process.env.PORT_DEV || 3333;
 const httpServer = http.createServer(app);
@@ -19,6 +21,7 @@ io.on("connection", (socket) => {
   socket.on("tasks", (groupData) => {
     io.emit("tasks", groupData);
   });
+
   socket.on("disconnect", () => {
     console.log("Cliente desconectado", socket.id);
   });

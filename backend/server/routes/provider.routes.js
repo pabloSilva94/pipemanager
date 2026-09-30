@@ -1,10 +1,14 @@
-const express = require("express");
+import { Router } from "express";
+import {
+  register,
+  put,
+  deleteProvider,
+} from "../controllers/providerController.js";
 
-const router = express.Router();
-const controller = require("../controllers/providerController");
+const router = Router();
 
-router.post("/register/:user_id", controller.register);
-router.put("/register/:id", controller.put);
-router.delete("register/:id", controller.delete);
+router.post("/register/:user_id", register);
+router.put("/register/:id", put);
+router.delete("/register/:id", deleteProvider); // Adicionada a barra '/' inicial
 
-module.exports = router;
+export default router;
